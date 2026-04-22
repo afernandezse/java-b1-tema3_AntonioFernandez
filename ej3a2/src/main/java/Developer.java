@@ -9,11 +9,14 @@ public class Developer extends Employee {
     public Developer(int id, String name, double salary, String language) {
         // TODO: call super constructor with id, name, salary
         // TODO: call setLanguage(language)
+        super(id, name, salary);
+        setLanguage(language);
     }
 
     // Getter for language
     public String getLanguage() {
         // TODO: return language
+        return language;
         
     }
 
@@ -21,6 +24,12 @@ public class Developer extends Employee {
     // If language is null or empty, print "Programming language cannot be empty."
     public void setLanguage(String language) {
         // TODO: validate and assign language
+        if(language == null || language.isEmpty()){
+            System.out.println("Programming language cannot be empty.");
+            this.language = "Unknown";
+        }else{
+            this.language = language;
+        }
     }
 
     // Override toString()
@@ -28,6 +37,7 @@ public class Developer extends Employee {
     @Override
     public String toString() {
         // TODO: return formatted string
+        return "Developer: " +  getId() + ", Name: " + getName() + ", Salary: " + getSalary() +  "€, Language: " + language;
         
     }
 }

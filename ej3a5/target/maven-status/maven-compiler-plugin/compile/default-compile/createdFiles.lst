@@ -1,0 +1,4 @@
+CreditCardPayment.class
+BankTransfer.class
+PayPalPayment.class
+Payment.class

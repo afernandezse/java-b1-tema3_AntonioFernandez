@@ -74,16 +74,18 @@ public class Notification {
 
     public Notification(String recipient) {
         // TODO: assign recipient
+        this.recipient = recipient;
     }
 
     public void send() {
         // TODO: implement base send method or leave for override
+        System.out.println("Sending generic notification to " + recipient);
     }
 
 	// -------------------------------------------------------------
     // Manual test using IDE
     // -------------------------------------------------------------
-    /*
+    
     public static void main(String[] args) {
         Notification email = new EmailNotification("anna@example.com", "Meeting Reminder");
         Notification sms = new SMSNotification("David", "+34600111222");
@@ -93,7 +95,6 @@ public class Notification {
         sms.send();
         push.send();
     }
-    */
     // Torna a comentar aquest main quan vulguis executar els tests amb maven test
     // Vuelve a comentar este main cuando quieras ejecutar los tests con:
     // mvn test

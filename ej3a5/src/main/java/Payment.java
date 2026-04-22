@@ -146,13 +146,18 @@ public abstract class Payment {
 
     public Payment(double amount) {
         // TODO: Validate amount. If negative, print "Amount must be positive."
+        if (amount < 0){
+            System.out.println("Amount must be positive.");
+        }else{
+            this.amount = amount;
+        }
     }
 
-    public abstract void processPayment();
+    public abstract boolean processPayment();
     public abstract String getPaymentDetails();
     public abstract double calculateTransactionFee();
 
-    /*
+    
     public static void main(String[] args) {
         Payment p1 = new CreditCardPayment(100.0, "1234-5678-9012-3456");
         p1.processPayment();
@@ -171,7 +176,7 @@ public abstract class Payment {
 
         Payment invalid = new CreditCardPayment(-50.0, "0000");
     }
-    */
+    
 }
 
 
